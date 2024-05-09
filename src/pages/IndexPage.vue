@@ -17,8 +17,6 @@ const onClick = (key: AvailableDeck) => {
 <template>
   <q-page class="deck-list">
     <deck-card v-for="(deck, key) in decks" :key :deck @click="onClick(key)" />
-    <deck-card v-for="(deck, key) in decks" :key :deck @click="onClick(key)" />
-    <deck-card v-for="(deck, key) in decks" :key :deck @click="onClick(key)" />
   </q-page>
 </template>
 
