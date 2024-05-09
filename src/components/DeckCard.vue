@@ -15,12 +15,12 @@ const image = computed(() => props.deck.image ? `url(${props.deck.image})` : '')
 
 <template>
   <div class="deck-card cursor-pointer q-hoverable" @click="emits('click')">
-    <q-card class="q-ma-md fit" :class="{ 'deck-card--with-background': !!image }">
+    <q-card class="fit" :class="{ 'deck-card--with-background': !!image }">
       <q-card-section class=" deck-card__section full-height">
-        <p class="q-ma-none q-pa-sm text-h6 bg-white deck-card__title">
+        <p class="q-ma-none q-pa-sm text-h6 rounded-borders bg-white deck-card__title">
           {{ deck.name }}
         </p>
-        <div v-if="deck.commander" class="deck-card__colors bg-white">
+        <div v-if="deck.commander" class="deck-card__colors rounded-borders bg-white">
           <mana-dot v-for="mana in deck.commander?.manaCost" :key="mana" :mana />
         </div>
       </q-card-section>
@@ -30,7 +30,7 @@ const image = computed(() => props.deck.image ? `url(${props.deck.image})` : '')
 
 <style lang="scss" scoped>
 .deck-card {
-  height: 200px;
+  height: 240px;
   width: clamp(320px, 100%, 600px);
   flex-direction: column;
 

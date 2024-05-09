@@ -15,7 +15,19 @@ const onClick = (key: AvailableDeck) => {
 </script>
 
 <template>
-  <q-page padding>
+  <q-page class="deck-list">
+    <deck-card v-for="(deck, key) in decks" :key :deck @click="onClick(key)" />
+    <deck-card v-for="(deck, key) in decks" :key :deck @click="onClick(key)" />
     <deck-card v-for="(deck, key) in decks" :key :deck @click="onClick(key)" />
   </q-page>
 </template>
+
+<style lang="scss" scoped>
+.deck-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: center;
+}
+</style>
